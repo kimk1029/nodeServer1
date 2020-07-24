@@ -41,7 +41,6 @@ jobs:
           username: kimk1029
           password: aormsja4
           port: 1029
-          sync: true 
           script: ls
                   whoami
                   sudo su -
