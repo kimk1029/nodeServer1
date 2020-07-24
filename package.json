@@ -1,0 +1,16 @@
+{
+	"name": "nodejs_server",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node index.js"
+	},
+	"description": "NodeJS Tutorial Server",
+	"author": {
+		"name": "kim1029"
+	},
+	"dependencies": {
+		"express": "^4.16.3",
+		"uuid": "^3.2.1"
+	}
+}
