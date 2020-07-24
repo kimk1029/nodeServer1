@@ -32,6 +32,7 @@ jobs:
           port: 1029
           source: "*"
           target: "/volume1/docker/nodeServer1"
+          rm: true 
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
