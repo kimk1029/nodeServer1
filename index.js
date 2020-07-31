@@ -1,6 +1,6 @@
 "use strict";
 const express = require("express");
-const mdbConn = require("./mariaDBConn.js");
+const mdbConn = require("./mariaDBconn.js");
 const bodyParser = require("body-parser");
 
 const cors = require("cors");
