@@ -23,7 +23,6 @@ app.use(bodyParser.json());
 mdbConn
 	.getUserList()
 	.then((rows) => {
-		console.log("rows");
 		console.log(rows);
 	})
 	.catch((errMsg) => {
@@ -47,11 +46,17 @@ app.get("/main", (req, res) => {
 	console.log(`Running`);
 });
 app.get("/users", (req, res) => {
-	return res.json(users);
+	console.log("getUSER!!!");
+	mdbConn.getUserList().then((rows) => {
+		rows = rows.reverse();
+		res.send(rows);
+	});
 });
 app.post("/users", (req, res) => {
-	console.log(req.body.content);
-	return res.json(users);
+	console.log(req.body);
+	const { name, content } = req.body;
+	mdbConn.insertUser({ name, content });
+	res.send("100");
 });
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
