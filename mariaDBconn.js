@@ -8,7 +8,7 @@ const pool = mariadb.createPool({
 	connectionLimit: 5,
 });
 
-async function GetUserList() {
+export async function GetUserList() {
 	const conn = await pool.getConnection();
 	conn.query("USE newnodeapp");
 	try {
@@ -24,7 +24,7 @@ async function GetUserList() {
 		return rows;
 	}
 }
-async function InsertUser(params) {
+export async function InsertUser(params) {
 	const conn = await pool.getConnection();
 	conn.query("USE newnodeapp");
 	try {
@@ -47,8 +47,3 @@ async function InsertUser(params) {
 		return rows;
 	}
 }
-
-module.exports = {
-	getUserList: GetUserList,
-	insertUser: InsertUser,
-};
